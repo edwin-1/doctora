@@ -1,0 +1,38 @@
+extends ../layout/app
+
+block contenido
+
+    //-pre= JSON.stringify(consulta, undefined, 2)
+
+    div(class="py-5")
+        h1(class="text-4xl my-10 font-extrabold text-center")= consulta.titulo 
+
+        div 
+            a(href="#" class="font-bold text-gray-600 text-sm") Categoria: 
+                span(class="font-normal")= consulta.categoria.nombre
+
+        div(class="mt-5 md:flex md:gap-4")
+            div(class="md:w-2/3 bg-white shadow rounded-lg")
+                img(src=`/uploads/${consulta.imagen}` alt=`imagen de la consulta ${consulta.titulo}`)
+                    
+                div(class="px-5 py-10 space-y-5")
+                    h2(class="text-2xl leading-6 font-bold text-gray-900") Informacion Consulta
+
+                    p= consulta.descripcion
+
+            div(class="md:w-2/3")
+                h2(class="text-center py-10 leading-6 text-2xl font-bold text-gray-900") Informacion y contacto
+
+
+                div(class="p-5")
+                    p(class="text-gray-600 font-bold text-sm") Soy la doctora Dinorath ofresco servicios a domicilio 
+                        li Atención médica integral a domicilio
+                        li Aplicación de solución (sueros) a domicilio
+                        li Atendido por médicos certificados y con amplia experiencia
+                
+                h3(class="text-2xl text-center my-10 font-extrabold text-gray-900") Contacto
+                div(class="flex justify-center gap-2")
+                    p Si deseas contactar a la doctora via Whatsapp 
+                    a(class="text-slate-500" href="https://walink.co/37238a") Presiona Aqui
+                
+                
